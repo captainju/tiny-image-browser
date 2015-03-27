@@ -52,3 +52,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+db.json
+.idea
+tiny-image-browser.iml
