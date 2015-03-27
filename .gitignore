@@ -56,3 +56,4 @@ target/
 db.json
 .idea
 tiny-image-browser.iml
+config.ini
