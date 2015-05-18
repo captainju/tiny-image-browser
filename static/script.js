@@ -74,12 +74,15 @@ $(window).scroll(scrollWatcher);
 var currentImg;
 $(document).on("click", ".images img", function () {
     $("#myModalLabel").html($(this).parent().parent().prev().html());
+    $('#imagepreview').attr('src', '');
     $('#imagemodal').modal('show');
-    $('#imagepreview').on("load", function () {
-        $('#imagemodal .modal-dialog').css("width", this.width + 30);
-    });
     currentImg = this;
     $('#imagepreview').attr('src', '/images/medium/' + $(this).data('filename'));
+    if(this.width == 216) {
+        $('#imagemodal .modal-dialog').css("width", 1024 + 30);
+    } else {
+        $('#imagemodal .modal-dialog').css("width", 576 + 30);
+    }
     var element_to_scroll_to = document.getElementById($(this).data('filename'));
     element_to_scroll_to.scrollIntoView();
 });
